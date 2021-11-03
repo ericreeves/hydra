@@ -94,6 +94,13 @@ EOF
           target = "/etc/caddy" # Bind mount the template from `NOMAD_TASK_DIR`.
         }
 
+        # Bind the html file to container.
+        mount {
+          type   = "bind"
+          source = "configs/ping.html"
+          target = "/static/ping.html" # Bind mount the template from `NOMAD_TASK_DIR`.
+        }
+
         # Bind the data directory to preserve certs.
         mount {
           type     = "bind"
@@ -119,6 +126,18 @@ EOF
 
         # Caddy doesn't support reload via signals as of 
         change_mode = "restart"
+      }
+      template {
+        data = <<EOF
+${ping_html}
+EOF
+
+        destination = "configs/ping.html" # Rendered template.
+
+        # Caddy doesn't support reload via signals as of 
+        change_mode     = "restart"
+        left_delimiter  = "[["
+        right_delimiter = "]]"
       }
     }
   }

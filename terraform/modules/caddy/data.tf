@@ -11,3 +11,7 @@ data "template_file" "caddyfile-public" {
     cloudflare_api_token = var.cloudflare_api_token
   }
 }
+
+data "template_file" "ping-html" {
+  template = file("${path.module}/conf/ping.html")
+}

@@ -154,3 +154,16 @@ resource "cloudflare_record" "doggo" {
   value = var.ips["floyd_public"]
 
 }
+
+resource "cloudflare_record" "ping" {
+  zone_id = cloudflare_zone.mrkaran_dev.id
+
+  name    = "ping"
+  type    = "A"
+  ttl     = "1"
+  proxied = "true"
+
+  value = var.ips["floyd_public"]
+
+}
+

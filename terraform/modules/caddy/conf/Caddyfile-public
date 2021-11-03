@@ -24,3 +24,17 @@ doggo.mrkaran.dev {
 	    dns cloudflare "${cloudflare_api_token}"
     }
 }
+
+ping.mrkaran.dev {
+    log {
+        format console
+    }
+    file_server {
+        root /static
+        index ping.html
+    }
+    templates
+    tls {
+	    dns cloudflare "${cloudflare_api_token}"
+    }
+}

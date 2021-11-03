@@ -47,4 +47,3 @@ syncthing.mrkaran.dev {
 	    dns cloudflare "${cloudflare_api_token}"
     }
 }
-
