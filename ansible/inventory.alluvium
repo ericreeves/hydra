@@ -1,0 +1,9 @@
+[alluvium:children]
+hypercube
+
+[hypercube]
+hypercube ansible_ssh_host=hypercube ansible_ssh_user=eric ansible_ssh_port=22 remote_ssh_user=eric
+
+[hypercube:vars]
+username=eric
+public_ssh_key="ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC+MFs4bQc5JT96hSbx8Q7NImy+LOu2lRWWK7w6Lxbtz4PhfyK6fBpyU89h5OHUokRjJRbPglfR0sU18UwMaeWL7skYaAN9/nDsYncj8JpBJjlnp1RN+1ThitzvjF265uPwCbz1NZ6JLDcAAMf2Z1iI/i+g05PTpv8baQ9E37OtWhOU614FohH+FeMOyWS/A8e9eeFnJE0rbXVDM2LfLX8zBzgAbnNPBfOBr9HIpB4Dc4JmjONfa6UyRmWNE2Tdx4qJcaQKkJToOi3ECaoIQYdiuxNkvZtQyplTLdy0JjrPHavZk7NvbiBnRf4GKP0/F5n2r+N7rljRCmveSFM3QNxx eric@AL-HOU-10975"

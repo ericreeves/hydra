@@ -15,14 +15,14 @@
         - curl
         - jq
         - fzf
-        - python
+        - python3
         - python3-pip
-        - python-apt
         - python3-apt
         - gnupg2
         - gnupg-agent
 
 - name: install unattended-upgrades
+  become: yes
   apt:
     name: "unattended-upgrades"
     state: present

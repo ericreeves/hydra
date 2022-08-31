@@ -1,12 +1,12 @@
-resource "cloudflare_record" "floyd" {
+resource "cloudflare_record" "hypercube" {
   zone_id = cloudflare_zone.mrkaran_dev.id
 
-  name    = "floyd"
+  name    = "hypercube"
   type    = "A"
   ttl     = "1"
   proxied = "false"
 
-  value = var.ips["floyd_floating"]
+  value = var.ips["hypercube_floating"]
 
 }
 
@@ -18,7 +18,7 @@ resource "cloudflare_record" "nomad" {
   ttl     = "1"
   proxied = "false"
 
-  value = var.ips["floyd_tailscale"]
+  value = var.ips["hypercube_tailscale"]
 
 }
 
@@ -30,7 +30,7 @@ resource "cloudflare_record" "consul" {
   ttl     = "1"
   proxied = "false"
 
-  value = var.ips["floyd_tailscale"]
+  value = var.ips["hypercube_tailscale"]
 
 }
 
@@ -78,7 +78,7 @@ resource "cloudflare_record" "pihole" {
   ttl     = "1"
   proxied = "false"
 
-  value = var.ips["floyd_tailscale"]
+  value = var.ips["hypercube_tailscale"]
 
 }
 
@@ -90,7 +90,7 @@ resource "cloudflare_record" "shynet" {
   ttl     = "1"
   proxied = "true"
   # TODO: shift to floating IP
-  value = var.ips["floyd_public"]
+  value = var.ips["hypercube_public"]
 
 }
 
@@ -102,7 +102,7 @@ resource "cloudflare_record" "koadings" {
   ttl     = "1"
   proxied = "false"
 
-  value = var.ips["floyd_tailscale"]
+  value = var.ips["hypercube_tailscale"]
 
 }
 
@@ -114,7 +114,7 @@ resource "cloudflare_record" "grafana" {
   ttl     = "1"
   proxied = "false"
 
-  value = var.ips["floyd_tailscale"]
+  value = var.ips["hypercube_tailscale"]
 
 }
 
@@ -126,7 +126,7 @@ resource "cloudflare_record" "prometheus" {
   ttl     = "1"
   proxied = "false"
 
-  value = var.ips["floyd_tailscale"]
+  value = var.ips["hypercube_tailscale"]
 
 }
 
@@ -138,7 +138,7 @@ resource "cloudflare_record" "syncthing" {
   ttl     = "1"
   proxied = "false"
 
-  value = var.ips["floyd_tailscale"]
+  value = var.ips["hypercube_tailscale"]
 
 }
 
@@ -150,7 +150,7 @@ resource "cloudflare_record" "git" {
   ttl     = "1"
   proxied = "true"
 
-  value = var.ips["floyd_public"]
+  value = var.ips["hypercube_public"]
 
 }
 
@@ -163,6 +163,6 @@ resource "cloudflare_record" "doggo" {
   ttl     = "1"
   proxied = "true"
 
-  value = var.ips["floyd_public"]
+  value = var.ips["hypercube_public"]
 
 }

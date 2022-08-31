@@ -1,0 +1,6 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/eric/code/hydra'
+make: Leaving directory '/home/eric/code/hydra'
+ 
+make: *** No targets specified and no makefile found.  Stop.
+

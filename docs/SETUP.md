@@ -125,7 +125,7 @@ Before proceeding ahead, make sure `nomad` is running:
 ```sh
 $ nomad server members
 Name          Address    Port  Status  Leader  Protocol  Build  Datacenter  Region
-floyd.global  10.47.0.6  4648  alive   true    2         1.0.3  hydra       global
+hypercube.global  10.47.0.6  4648  alive   true    2         1.0.3  hydra       global
 ```
 
 ## Install Consul

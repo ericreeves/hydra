@@ -1,4 +1,4 @@
 .PHONY: run
 
-run:
-	ansible-playbook playbook.yml -i inventory --extra-vars "hosts=hydra"
+all:
+	ansible-playbook -i inventory.alluvium playbook.yml -e '@password.yml' --vault-password-file='vault.txt' --key-file='/home/eric/.ssh/flatearth'

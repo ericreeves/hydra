@@ -1,9 +1,9 @@
 locals {
   # Map of IPs of all the nodes.
   ips = {
-    floyd_floating  = module.servers.floating_floyd
-    floyd_tailscale = "100.119.138.27"
-    floyd_public    = "68.183.87.4"
+    hypercube_floating  = module.servers.floating_hypercube
+    hypercube_tailscale = "100.119.138.27"
+    hypercube_public    = "68.183.87.4"
   }
 }
 

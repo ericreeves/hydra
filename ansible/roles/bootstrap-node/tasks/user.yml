@@ -1,20 +1,23 @@
 ---
 
 - name: Make sure we have a 'wheel' group
+  become: yes
   group:
     name: wheel
     state: present
 
 - name: Allow 'wheel' group to have passwordless sudo
+  become: yes
   lineinfile:
     dest: /etc/sudoers
     state: present
     regexp: '^%wheel'
     line: '%wheel ALL=(ALL) NOPASSWD: ALL'
     validate: 'visudo -cf %s'
-  when: ansible_user == "root"
+#  when: ansible_user == "root"
 
 - name: Add user to wheel group
+  become: yes
   user:
     name: "{{username}}"
     groups:
@@ -23,11 +26,12 @@
     state: present
     createhome: yes
     shell: /bin/bash
-  when: ansible_user == "root"
+#  when: ansible_user == "root"
 
 - name: Set authorized key for user
+  become: yes
   authorized_key:
     user: "{{username}}"
     state: present
-    key: "{{github_ssh_key_url}}"
-  when: github_ssh_key_url != None
+    key: "{{public_ssh_key}}"
+  when: public_ssh_key != None

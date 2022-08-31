@@ -11,12 +11,12 @@
       tags:
         - docker
     
-    - role: setup-tailscale
-      become: yes
-      tags:
-        - tailscale
+    # - role: setup-tailscale
+    #   become: yes
+    #   tags:
+    #     - tailscale
 
-    - role: viasite-ansible.zsh
-      become: yes
-      tags:
-        - zsh
+    # - role: viasite-ansible.zsh
+    #   become: yes
+    #   tags:
+    #     - zsh

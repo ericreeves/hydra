@@ -1,6 +1,7 @@
 ---
 
 - name: disable ssh remote root login
+  become: yes
   lineinfile:
     dest: "{{ ssh_sshd_config }}"
     regexp: "^#?PermitRootLogin"
@@ -10,6 +11,7 @@
     - restart sshd
 
 - name: enable ssh strict mode
+  become: yes
   lineinfile:
     dest: "{{ ssh_sshd_config }}"
     regexp: "^#?StrictModes"
@@ -19,6 +21,7 @@
     - restart sshd
 
 - name: disable X11 forwarding
+  become: yes
   lineinfile:
     dest: "{{ ssh_sshd_config }}"
     regexp: "^#?X11Forwarding"
@@ -27,23 +30,25 @@
   notify:
     - restart sshd
 
-- name: disable ssh password login
-  lineinfile:
-    dest: "{{ ssh_sshd_config }}"
-    regexp: "{{ item.regexp }}"
-    line: "{{ item.line }}"
-    state: present
-  with_items:
-    - regexp: "^#?PasswordAuthentication"
-      line: "PasswordAuthentication no"
-    - regexp: "^#?ChallengeResponseAuthentication"
-      line: "ChallengeResponseAuthentication no"
-    - regexp: "^#?PermitEmptyPasswords"
-      line: "PermitEmptyPasswords no"
-  notify:
-    - restart sshd
+# - name: disable ssh password login
+  # become: yes
+#   lineinfile:
+#     dest: "{{ ssh_sshd_config }}"
+#     regexp: "{{ item.regexp }}"
+#     line: "{{ item.line }}"
+#     state: present
+#   with_items:
+#     - regexp: "^#?PasswordAuthentication"
+#       line: "PasswordAuthentication no"
+#     - regexp: "^#?ChallengeResponseAuthentication"
+#       line: "ChallengeResponseAuthentication no"
+#     - regexp: "^#?PermitEmptyPasswords"
+#       line: "PermitEmptyPasswords no"
+#   notify:
+#     - restart sshd
 
 - name: set ssh allowed users to {{ username }}
+  become: yes
   lineinfile:
     dest: "{{ ssh_sshd_config }}"
     regexp: "^#?AllowUsers"
@@ -53,6 +58,7 @@
   when: username != None
 
 - name: add ssh banner info
+  become: yes
   lineinfile:
     dest: "{{ ssh_sshd_config }}"
     regexp: "^#?Banner"
@@ -62,6 +68,7 @@
     - restart sshd
 
 - name: update ssh banner
+  become: yes
   template:
     src: ssh-banner.j2
     dest: /etc/issue.net

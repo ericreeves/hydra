@@ -1,18 +1,18 @@
-nomad.mrkaran.dev {
+nomad.alluvium.cloud {
     reverse_proxy 100.119.138.27:4646
     tls {
 	    dns cloudflare "${cloudflare_api_token}"
     }
 }
 
-consul.mrkaran.dev {
+consul.alluvium.cloud {
     reverse_proxy 100.119.138.27:8500
     tls {
 	    dns cloudflare "${cloudflare_api_token}"
     }
 }
 
-pihole.mrkaran.dev {
+pihole.alluvium.cloud {
     {{ range service "pihole-admin" }}
     reverse_proxy {{ .Address }}:{{ .Port }}
     {{ end }}
@@ -21,7 +21,7 @@ pihole.mrkaran.dev {
     }
 }
 
-grafana.mrkaran.dev {
+grafana.alluvium.cloud {
     {{ range service "grafana-web" }}
     reverse_proxy {{ .Address }}:{{ .Port }}
     {{ end }}
@@ -30,7 +30,7 @@ grafana.mrkaran.dev {
     }
 }
 
-prometheus.mrkaran.dev {
+prometheus.alluvium.cloud {
     {{ range service "prometheus-web" }}
     reverse_proxy {{ .Address }}:{{ .Port }}
     {{ end }}
@@ -39,7 +39,7 @@ prometheus.mrkaran.dev {
     }
 }
 
-syncthing.mrkaran.dev {
+syncthing.alluvium.cloud {
     {{ range service "syncthing-web" }}
     reverse_proxy {{ .Address }}:{{ .Port }}
     {{ end }}

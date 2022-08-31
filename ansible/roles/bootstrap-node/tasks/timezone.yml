@@ -1,3 +1,4 @@
-- name: Set timezone to Asia/Kolkata
+- name: Set timezone to America/Chicago
+  become: yes
   timezone:
-    name: Asia/Kolkata
+    name: America/Chicago

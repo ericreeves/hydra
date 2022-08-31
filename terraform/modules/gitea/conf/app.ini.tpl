@@ -17,10 +17,10 @@ TEMP_PATH = /data/gitea/uploads
 
 [server]
 APP_DATA_PATH    = /data/gitea
-DOMAIN           = git.mrkaran.dev
-SSH_DOMAIN       = koadings.mrkaran.dev
+DOMAIN           = git.alluvium.cloud
+SSH_DOMAIN       = koadings.alluvium.cloud
 HTTP_PORT        = 3000
-ROOT_URL         = https://git.mrkaran.dev/
+ROOT_URL         = https://git.alluvium.cloud/
 DISABLE_SSH      = false
 SSH_PORT         = 4222
 SSH_LISTEN_PORT  = 22
@@ -36,7 +36,7 @@ THEME_COLOR_META_TAG = "#6B46C1"
 [ui.meta]
 AUTHOR = Karan
 DESCRIPTION = Karan's self-hosted Gitea instance
-KEYWORDS = git, gitea, karan, git.mrkaran.dev, mrkaran
+KEYWORDS = git, gitea, karan, git.alluvium.cloud, mrkaran
 
 [database]
 PATH     = /data/gitea/gitea.db

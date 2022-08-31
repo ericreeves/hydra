@@ -1,4 +1,4 @@
-shynet.mrkaran.dev {
+shynet.alluvium.cloud {
     {{ range service "shynet-web" }}
     reverse_proxy {{ .Address }}:{{ .Port }}
     {{ end }}
@@ -7,7 +7,7 @@ shynet.mrkaran.dev {
     }
 }
 
-git.mrkaran.dev {
+git.alluvium.cloud {
     {{ range service "gitea-web" }}
     reverse_proxy {{ .Address }}:{{ .Port }}
     {{ end }}
@@ -16,7 +16,7 @@ git.mrkaran.dev {
     }
 }
 
-doggo.mrkaran.dev {
+doggo.alluvium.cloud {
     {{ range service "doggo-web" }}
     reverse_proxy {{ .Address }}:{{ .Port }}
     {{ end }}

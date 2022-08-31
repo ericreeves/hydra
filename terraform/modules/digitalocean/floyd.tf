@@ -1,7 +1,7 @@
-# `floyd` is the Nomad Serve which also runs Consul, Vault.
-resource "digitalocean_droplet" "floyd" {
+# `hypercube` is the Nomad Serve which also runs Consul, Vault.
+resource "digitalocean_droplet" "hypercube" {
   image              = "ubuntu-20-04-x64"
-  name               = "floyd"
+  name               = "hypercube"
   region             = "blr1"
   monitoring         = true
   size               = "s-2vcpu-4gb"
@@ -15,7 +15,7 @@ resource "digitalocean_droplet" "floyd" {
 }
 
 # Attach the floating ip to droplet
-resource "digitalocean_floating_ip" "floyd" {
-  droplet_id = digitalocean_droplet.floyd.id
-  region     = digitalocean_droplet.floyd.region
+resource "digitalocean_floating_ip" "hypercube" {
+  droplet_id = digitalocean_droplet.hypercube.id
+  region     = digitalocean_droplet.hypercube.region
 }

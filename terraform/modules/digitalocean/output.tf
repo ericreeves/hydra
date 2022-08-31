@@ -1,4 +1,4 @@
-output "floating_floyd" {
-  value       = digitalocean_floating_ip.floyd.ip_address
-  description = "Floating IP of Floyd Node"
+output "floating_hypercube" {
+  value       = digitalocean_floating_ip.hypercube.ip_address
+  description = "Floating IP of hypercube Node"
 }
